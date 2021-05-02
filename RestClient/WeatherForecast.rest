@@ -1,0 +1,8 @@
+DELETE  https://localhost:5001/weatherforecast/delete/1 HTTP/1.1
+content-type: application/json
+
+
+
+
+###
+PATCH https://localhost:5001/movies?id=c07d3849-be83-4cdc-b3c8-bc2c1aa04911 HTTP/1.1
