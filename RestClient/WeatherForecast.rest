@@ -1,8 +1,16 @@
-DELETE  https://localhost:5001/weatherforecast/delete/1 HTTP/1.1
-content-type: application/json
-
-
-
+@dev_url = https://localhost:5001/
+@authentication = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYXZpZEBzb21ld2hlcmUuY29tIiwicm9sZSI6InN1cGVyYWRtaW4iLCJuYmYiOjE2MjExNjY5NzksImV4cCI6MTYyMTc3MTc3OSwiaWF0IjoxNjIxMTY2OTc5LCJpc3MiOiJzb21lLWlzc3VlciIsImF1ZCI6InNvbWUtYXVkaWVuY2UifQ.MarWgKVfLbMzc9VKGPZJRbH_cXNrz8pPujHdO6S0eO0
 
 ###
-PATCH https://localhost:5001/movies?id=c07d3849-be83-4cdc-b3c8-bc2c1aa04911 HTTP/1.1
+
+PATCH {{dev_url}}Movies/edit/643519a2-cd7a-4ac9-9311-3d2937ec8b6f HTTP/1.1 Authorization: {{authentication}}
+content-type: application/json
+
+{
+  "title": "asdfasdfasdf",
+  "releaseDate": "2021-05-09T12:37:43.728Z",
+  "imdb": 0,
+  "description": "string"
+}
+
+POST

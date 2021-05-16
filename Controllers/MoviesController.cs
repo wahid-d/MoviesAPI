@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Identity.Service.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -62,9 +65,49 @@ namespace Movies.Controllers
             return Accepted();
         }
 
-        [HttpPatch]
-        public IActionResult Change([FromQuery] Guid id)
+        [HttpGet]
+        [Route("signin")]
+        public IActionResult Signin()
         {
+            var userEmail = "david@somewhere.com";
+            var userRole = "superadmin";
+
+            var token = JwtService.GenerateToken(userEmail, userRole);
+            HttpContext.Session.SetString("JWT", token);
+
+            return Ok(new
+            {
+                token = token,
+                error = false
+            });
+        }
+
+        [Authorize(Roles = "superadmin")]
+        [HttpPatch]
+        [Route("edit/{id}")]
+        public async Task<IActionResult> Change([FromRoute] Guid id, [FromBody] ChangeMovieViewModel model, [FromQuery] string search)
+        {
+            if (!TryValidateModel(model))
+            {
+                return BadRequest();
+            }
+
+            Console.WriteLine(HttpContext.Request.Headers["Authorization"]);
+            Console.WriteLine(JwtService.GetClaim(HttpContext.Request.Headers["Authorization"].ToString().Split(" ")[1]));
+
+            //if (!await mContext.Movies.AnyAsync(m => m.ID == id))
+            //{
+            //    return NotFound(new { ID = id });
+            //}
+
+            //Movie movie = await mContext.Movies.FirstOrDefaultAsync(m => m.ID == id);
+
+            //movie.Title = model.Title;
+            //movie.ReleaseDate = model.ReleaseDate;
+
+            //mContext.Movies.Update(movie);
+            //await mContext.SaveChangesAsync();
+
             return Ok(id);
         }
     }

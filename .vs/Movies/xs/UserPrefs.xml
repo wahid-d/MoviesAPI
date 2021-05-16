@@ -1,20 +1,23 @@
 ﻿<Properties StartupConfiguration="{11E2F431-AC58-49B8-8EFB-01EE0EE9EA1E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/MoviesController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ViewModels/ChangeMovieViewModel.cs">
     <Files>
-      <File FileName="Models/Data/MoviesDbContext.cs" Line="10" Column="37" />
-      <File FileName="Models/Movie.cs" Line="6" Column="13" />
-      <File FileName="Controllers/MoviesController.cs" Line="31" Column="31" />
+      <File FileName="appsettings.json" Line="15" Column="8" />
+      <File FileName="Services/JwtService.cs" Line="6" Column="38" />
+      <File FileName="Startup.cs" Line="81" Column="1" />
+      <File FileName="Controllers/MoviesController.cs" Line="88" Column="92" />
+      <File FileName="Program.cs" Line="10" Column="1" />
+      <File FileName="ViewModels/ChangeMovieViewModel.cs" Line="11" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Movies" expanded="True">
             <Node name="Movies" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="MoviesController.cs" selected="True" />
-              </Node>
-              <Node name="Models" expanded="True">
-                <Node name="Data" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="RestClient" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="ChangeMovieViewModel.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -27,7 +30,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/david/Developer/vscode/web-api/Movies/Controllers/MoviesController.cs" relfile="Controllers/MoviesController.cs" line="37" column="1" />
+      <Breakpoint file="/Users/david/Developer/vscode/web-api/Movies/Controllers/MoviesController.cs" relfile="Controllers/MoviesController.cs" line="48" column="1" />
+      <Breakpoint file="/Users/david/Developer/vscode/web-api/Movies/Controllers/MoviesController.cs" relfile="Controllers/MoviesController.cs" line="89" column="1" />
+      <Breakpoint file="/Users/david/Developer/vscode/web-api/Movies/Startup.cs" relfile="Startup.cs" line="81" column="1" />
+      <Breakpoint file="/Users/david/Developer/vscode/web-api/Movies/Startup.cs" relfile="Startup.cs" line="79" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
